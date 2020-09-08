@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t renovatiodoc/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run renovatiodoc/docker-react npm run test -- --coverage
