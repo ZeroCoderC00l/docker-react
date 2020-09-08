@@ -6,4 +6,4 @@ before_install:
   - docker build -t renovatiodoc/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run renovatiodoc/docker-react npm run test -- --coverage
+  - docker run -e CI=true renovatiodoc/docker-react npm run test -- --coverage
